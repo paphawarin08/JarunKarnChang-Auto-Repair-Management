@@ -1,0 +1,243 @@
+/* ===== หมวดหมู่ (หน้าแรก) ===== */
+.part-cat-grid{
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+  gap:16px; margin-top:16px;
+}
+.part-cat-card{
+  background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+  padding:16px; cursor:pointer; transition: transform .06s ease, box-shadow .15s ease;
+}
+.part-cat-card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transform: translateY(-1px); }
+.part-cat-top{ display:flex; align-items:center; gap:12px; }
+.part-cat-icon{ width:56px; height:56px; border-radius:50%; object-fit:cover; border:1px solid #e5e7eb; }
+.part-cat-icon.placeholder{ display:flex; align-items:center; justify-content:center; color:#9ca3af; background:#f8fafc; }
+.part-cat-name{ font-size:18px; font-weight:600; color:#111827; }
+.part-cat-bottom{ margin-top:14px; display:flex; align-items:center; justify-content:space-between; }
+.stock-pill{ padding:6px 10px; border-radius:14px; background:#e0ecff; color:#2563eb; font-size:12px; font-weight:600; }
+.mini-danger{ border:0; background:#fee2e2; color:#ef4444; padding:6px 8px; border-radius:8px; cursor:pointer; }
+.mini-danger:hover{ filter:brightness(.97); }
+
+/* ===== รูปในรายการ ===== */
+.thumb{ width:48px; height:48px; object-fit:cover; border-radius:8px; border:1px solid #e5e7eb; }
+.thumb-lg{ width:64px; height:64px; object-fit:cover; border-radius:10px; border:1px solid #e5e7eb; }
+.thumb-xl{ width:180px; height:180px; object-fit:cover; border-radius:14px; border:1px solid #e5e7eb; }
+.thumb.placeholder, .thumb-lg.placeholder, .thumb-xl.placeholder{
+  display:flex; align-items:center; justify-content:center; color:#9ca3af; background:#f8fafc;
+}
+
+/* ===== กล่องแอ็กชันในรายละเอียด ===== */
+.actions-panel{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; margin-top:16px; }
+.action-box{ border:1px solid #e5e7eb; border-radius:12px; padding:12px; background:#fff; }
+.action-box h4{ margin:0 0 8px; font-size:14px; font-weight:700; color:#0f172a; display:flex; gap:8px; align-items:center; }
+.action-box .row{ display:flex; gap:8px; margin-bottom:8px; }
+.action-box input, .action-box select{
+  flex:1; padding:8px 10px; border-radius:10px; border:1px solid #e2e8f0; font-size:14px; outline:none;
+}
+.btn-primary.sm{ padding:8px 12px; font-size:13px; }
+.btn-outline.sm{ padding:8px 12px; font-size:13px; }
+
+/* ===== ตารางประวัติ (lots/ledger) ===== */
+.history-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+@media (max-width: 900px){ .history-grid{ grid-template-columns:1fr; } }
+.history-box{ border:1px solid #e5e7eb; border-radius:12px; background:#fff; padding:10px; }
+.history-table .thead, .history-table .tr{
+  display:grid; grid-template-columns: 1.2fr .6fr .6fr .6fr 1fr .6fr .8fr; gap:8px; padding:6px 4px;
+}
+.history-table .thead{ font-weight:700; color:#334155; border-bottom:1px solid #eef2f7; }
+.history-table .tbody .tr{ border-bottom:1px dashed #eef2f7; }
+.history-table .empty{ padding:10px; color:#94a3b8; text-align:center; }
+.modal-box.wide { max-width: 1040px; }
+.thumb, .thumb-lg, .thumb-xl { object-fit: contain; }
+
+/* ===== Actions panel (ซื้อเข้า / ขาย) ===== */
+.actions-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.action-box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.action-box h4 {
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.action-box .row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  min-width: 0;         /* ให้ลูกบีบ/ขยายได้ */
+}
+
+.action-box .row > input,
+.action-box .row > select {
+  flex: 1 1 0;          /* ขยายเต็มช่องว่างที่มี */
+  min-width: 0;         /* สำคัญ: ป้องกัน overflow ทำให้ยืดได้จริง */
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.action-box .row > input:focus,
+.action-box .row > select:focus {
+  border-color: #94a3b8;
+}
+
+.action-box .btn-primary.sm,
+.action-box .btn-outline.sm {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+/* มือถือให้เรียงลงบรรทัด */
+@media (max-width: 640px) {
+  .action-box .row {
+    flex-direction: column;
+  }
+}
+
+/* แถวว่างในตาราง */
+.empty-cell {
+  text-align: center;
+  color: #64748b;
+  padding: 24px 12px;
+}
+
+/* กล่องว่างในมุมมองลิสต์ */
+.empty-list {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* src/styles/PartCategoryEditModal.css */
+/* โฟกัสแค่สไตล์ของ Edit Modal เท่านั้น ไม่ไปยุ่ง modal อื่นในระบบ */
+
+.pc-edit-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.pc-edit-modal__box {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 48px rgba(0,0,0,.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-edit-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pc-edit-modal__icon-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+.pc-edit-modal__icon-btn:hover { color: #111827; }
+
+.pc-edit-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pc-edit-modal__body {
+  padding: 16px;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.pc-edit-modal__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.pc-edit-modal__field label {
+  display: block;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.pc-edit-modal__field input[type="text"],
+.pc-edit-modal__field input[type="file"],
+.pc-edit-modal__field input:not([type]) {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.pc-edit-modal__field.full {
+  grid-column: 1 / -1;
+}
+
+.pc-edit-modal__preview {
+  margin-top: 8px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.pc-edit-modal__actions {
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ปุ่ม 3 จุดและเมนู (ถ้าอยากรวมไว้ที่นี่ก็ได้) */
+.mini-kebab {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 8px;
+  height: 32px; width: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.mini-kebab:hover { background: #f9fafb; }
+
+.kebab-menu .kebab-item {
+  background: transparent; border: none; text-align: left; cursor: pointer;
+  font-size: 14px; border-bottom: 1px solid #f3f4f6; width: 100%;
+}
+.kebab-menu .kebab-item:last-child { border-bottom: none; }
+.kebab-menu .kebab-item:hover { background: #f9fafb; }
+

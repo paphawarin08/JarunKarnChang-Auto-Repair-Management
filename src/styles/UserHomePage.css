@@ -1,0 +1,436 @@
+/* --- Page Wrapper --- */
+.page-wrapper {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.user-check-page23 {
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Header Styles --- */
+.user-check-header13 {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px 0;   /* ลด padding ให้แนบสนิท */
+  margin-bottom: 0; /* ไม่ให้มีช่องว่าง */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  padding-right: 30px;
+  border-right: 2px solid #ddd;
+  display: flex;          
+  align-items: center; 
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.company-logo {
+  width: 90px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.header-search-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-input-user {
+  padding: 0.5rem 1rem;
+  width: 300px;
+  border: 1px solid #9EB8DE;
+  border-radius: 20px;
+  margin-left: 0;
+  background-color: #fff;
+}
+
+.search-input-user::placeholder {
+  color: #717171;
+}
+
+.search-button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #2563eb;
+}
+
+/* --- Banner Carousel --- */
+.banner-slider {
+  position: relative;
+  width: 100%;        
+  max-width: 1920px;  
+  height: 100%;
+  margin-bottom: 5%;
+  background-color: #fff;
+}
+
+.banner-image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;      
+  object-position: center; 
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slide-btn.prev {
+  left: 10px;
+}
+
+.slide-btn.next {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* --- Services Section --- */
+
+.services-section {
+  display: flex;  
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: #fff;       /* พื้นหลังสีขาว */
+  border-radius: 25px;          /* มุมโค้ง */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เงา */
+  margin-top: 0.5rem;
+  margin: 100px 100px;
+}
+
+
+.services-text {
+  flex: 0.55;
+  text-align: center;
+  align-items: center;
+}
+
+.services-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.services-sub {
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.services-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+
+.service-btn {
+  background: linear-gradient(90deg, #4A90E2, #80BFFF);
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Booking Section --- */
+.booking-section {
+  text-align: center;
+  margin: 3rem 0;
+  background: #fff;
+}
+
+.booking-section .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.booking-methods {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.method p {
+  font-family: 'Segoe UI', 'Prompt', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.icon {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #3E72BC;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 3rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 1920px) {
+    .services-section {
+  display: flex;  
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  background: #fff;
+  margin-top: 1.5rem;
+  gap: -10rem; /* ระยะห่างซ้าย-ขวา */
+  align-items: center;
+}
+}
+
+/* --- Responsive Adjustments --- */
+
+/* ---------------- Responsive: Laptop ---------------- */
+@media (max-width: 1250px) {
+  .header-container {
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+
+  .company-logo {
+    width: 75px;
+  }
+
+  .search-input-user {
+    width: 250px;
+  }
+
+  .services-section {
+    margin: 2rem 2rem;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .services-title {
+    font-size: 2.2rem;
+  }
+
+  .services-sub {
+    font-size: 1.1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr; /* แสดง 2 คอลัมน์สำหรับ Laptop */
+    gap: 1rem;
+  }
+
+  .service-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .booking-methods {
+    gap: 2.5rem;
+  }
+
+  .icon {
+    max-width: 280px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+
+/* ---------------- Responsive: Tablet ---------------- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .company-logo {
+    width: 70px;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-search-section {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .search-input-user {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .services-section {
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .services-title {
+    font-size: 1.8rem;
+  }
+
+  .services-sub {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .service-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .booking-methods {
+    gap: 2rem;
+  }
+
+  .icon {
+    max-width: 200px;
+  }
+
+  .search-container {
+    width: 245px;
+  }
+
+   .search-button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* ---------------- Responsive: Mobile ---------------- */
+@media (max-width: 480px) {
+  .company-logo {
+    width: 60px;
+  }
+
+  .services-section {
+    margin: 0.8rem;
+    padding: 1rem;
+  }
+
+  .services-title {
+    font-size: 1.4rem;
+  }
+
+  .services-sub {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .booking-section .section-title {
+    font-size: 1.2rem;
+  }
+
+  .method p {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    max-width: 150px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .search-input-user {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .search-container {
+    width: 245px;
+  }
+
+  .search-button {
+    padding: 0.8rem 1.5rem;
+  }
+}

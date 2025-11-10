@@ -1,0 +1,624 @@
+/* Dashboard.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+}
+
+/* Main Container */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  padding: 0;
+}
+
+.dashboard-wrapper {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.db-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-title {
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Main Content */
+.dashboard-main {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #ffffff;
+}
+
+/* ยอดขาย Content */
+.kpi-grid {
+  display: flex;
+  gap: 20px;           /* ระยะห่างระหว่างการ์ด */
+  flex-wrap: nowrap;   /* ไม่ตัดขึ้นบรรทัดใหม่ */
+}
+
+.kpi-card {
+  flex: 1;             /* ให้การ์ดขยายเท่า ๆ กัน */
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.kpi-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.kpi-value {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.info-icon {
+  color: #94a3b8;
+}
+
+.chart-container {
+  height: 200px;
+  position: relative;
+}
+
+/* Middle Grid */
+.middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Table Cards */
+.table-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.table-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.table-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Status Table */
+.status-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.status-table th {
+  text-align: left;
+  padding: 12px 0;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.status-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Stock Table */
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stock-table th {
+  text-align: left;
+  padding: 12px 0;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sort-arrow {
+  margin-left: 4px;
+  color: #94a3b8;
+}
+
+.stock-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+}
+
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 40px 0 !important;
+}
+
+/* Table Pagination */
+.table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.pagination-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #64748b;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #f8fafc;
+}
+
+.page-number {
+  margin: 0 4px;
+}
+
+.items-select {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.pagination-text {
+  margin-left: 4px;
+}
+
+/* Appointments Card */
+.appointments-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.appointments-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.filter-tab.active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Appointments Table */
+.appointments-table-wrapper {
+  overflow-x: auto;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.appointments-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.appointments-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #334155;
+  vertical-align: top;
+}
+
+.vehicle-info {
+  line-height: 1.4;
+}
+
+.vehicle-detail {
+  color: #64748b;
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Buttons */
+.confirm-button {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+.confirm-button.confirmed {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.confirm-button.unconfirmed {
+  background-color: #ef4444;
+  color: white;
+}
+
+.confirm-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.action-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Appointments Footer */
+.appointments-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.total-items {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .charts-grid,
+  .middle-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-main {
+    padding: 24px;
+    gap: 24px;
+  }
+  
+  .chart-card,
+  .table-card,
+  .appointments-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 16px;
+    gap: 20px;
+  }
+  
+  .dashboard-header {
+    padding: 16px 20px;
+  }
+  
+  .appointments-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-tabs {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .appointments-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .chart-card,
+  .table-card,
+  .appointments-card {
+    padding: 16px;
+  }
+  
+  .dashboard-title {
+    font-size: 20px;
+  }
+  
+  .chart-title,
+  .table-title,
+  .appointments-title {
+    font-size: 16px;
+  }
+  
+  .filter-tab {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Custom Scrollbar */
+.appointments-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.appointments-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.appointments-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.appointments-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus States */
+.back-button:focus,
+.pagination-btn:focus,
+.items-select:focus,
+.filter-tab:focus,
+.confirm-button:focus,
+.action-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation */
+.chart-card,
+.table-card,
+.appointments-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table Row Hover Effect */
+.appointments-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.status-table tbody tr:hover,
+.stock-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Loading State (for future use) */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-container {
+    background: white;
+  }
+  
+  .back-button,
+  .filter-tabs,
+  .pagination-btn,
+  .action-button {
+    display: none;
+  }
+  
+  .chart-card,
+  .table-card,
+  .appointments-card {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    break-inside: avoid;
+  }
+}
+
+/* === Sales table scroll (ไม่ดันหน้าทั้งหมด) === */
+.table-scroll-y {
+  max-height: 240px;    /* ≈ รองรับ ~4 แถว (ขึ้นกับฟอนต์/ความสูงจริง) */
+  overflow-y: auto;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* date inputs ในแถบกรองเดิม */
+.date-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #334155;
+}
+.date-input:focus { outline: 2px solid #3b82f6; outline-offset: 1px; }

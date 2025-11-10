@@ -1,0 +1,738 @@
+/* AppointmentCalendar.css */
+
+.appointment-calendar {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header */
+.calendar-header-bar {
+  background: white;
+  padding: 5px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+
+.current-date {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  min-width: 120px;
+  text-align: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.view-switcher {
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.view-button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.view-button.active {
+  background: #4285f4;
+  color: white;
+}
+
+.view-button:not(.active):hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* Calendar Content */
+.calendar-content {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Month View */
+.calendar-grid {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #666;
+}
+
+.day-header {
+  padding: 16px 8px;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  font-size: 14px;
+}
+
+.calendar-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.calendar-week:last-child {
+  border-bottom: none;
+}
+
+.calendar-day {
+  min-height: 120px;
+  padding: 8px;
+  border-right: 1px solid #e0e0e0;
+  background: white;
+  position: relative;
+}
+
+.calendar-day:last-child {
+  border-right: none;
+}
+
+.calendar-day.other-month {
+  background: #f8f8f8;
+  color: #999;
+}
+
+.day-number {
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-right: 80%;
+  font-size: 14px;
+}
+
+.day-appointments {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.appointment-item {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.appointment-item.maintenance {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.appointment-item.repair {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.appointment-item.service {
+  background: #e8f5e8;
+  color: #388e3c;
+}
+
+/* Week View */
+.week-view {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.week-header {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  background: #666;
+  color: white;
+}
+
+.time-column {
+  padding: 16px 8px;
+}
+
+.week-day-header {
+  padding: 16px 8px;
+  text-align: center;
+}
+
+.day-name {
+  font-size: 12px;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.day-date {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.week-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 60px;
+}
+
+.time-label {
+  padding: 16px 8px;
+  font-size: 12px;
+  color: #666;
+  border-right: 1px solid #e0e0e0;
+  background: #f8f8f8;
+}
+
+.time-cell {
+  padding: 8px;
+  border-right: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.time-cell:last-child {
+  border-right: none;
+}
+
+.appointment-block {
+  padding: 4px 8px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.appointment-block.maintenance {
+  background: #e3f2fd;
+    border-width: 1px;
+  border-style: solid;
+  border-color: #3288de;
+  color: #1976d2;
+}
+
+.appointment-block.repair {
+  background: #ffebee;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d32f2f;
+  color: #d32f2f;
+}
+
+.appointment-block.service {
+  background: #e8f5e8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #388e3c;
+  color: #388e3c;
+}
+
+/* Day View */
+.day-view {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.day-header {
+  padding: 24px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.day-schedule {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-row {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 80px;
+}
+
+.schedule-time {
+  width: 120px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-right: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: flex-start;
+}
+
+.schedule-content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedule-appointment {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.schedule-appointment.maintenance {
+  background: #e3f2fd;
+  border-left-color: #1976d2;
+}
+
+.schedule-appointment.repair {
+  background: #ffebee;
+  border-left-color: #d32f2f;
+}
+
+.schedule-appointment.service {
+  background: #e8f5e8;
+  border-left-color: #388e3c;
+}
+
+.appointment-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.appointment-customer {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.appointment-duration {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Add Appointment Button */
+.add-appointment-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.add-appointment-btn:hover {
+  background: #3367d6;
+  box-shadow: 0 6px 16px rgba(66, 133, 244, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-header-bar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .header-center {
+    order: -1;
+  }
+
+  .current-date {
+    font-size: 16px;
+  }
+
+  .view-switcher {
+    width: 100%;
+  }
+
+  .view-button {
+    flex: 1;
+    text-align: center;
+  }
+
+  .calendar-content {
+    padding: 16px;
+  }
+
+  .calendar-day {
+    min-height: 80px;
+    padding: 4px;
+  }
+
+  .day-number {
+    font-size: 12px;
+  }
+
+  .appointment-item {
+    font-size: 9px;
+  }
+
+  .time-row {
+    min-height: 50px;
+  }
+
+  .time-label {
+    font-size: 10px;
+    padding: 12px 4px;
+  }
+
+  .schedule-time {
+    width: 80px;
+    font-size: 12px;
+  }
+}
+
+/* ===== Appointment Editor / Detail Modals ===== */
+.appt-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,.45);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 1200; backdrop-filter: blur(2px);
+}
+.appt-modal {
+  width: 880px; max-width: calc(100vw - 40px);
+  background:#fff; border-radius:16px; overflow:hidden;
+  box-shadow: 0 12px 40px rgba(2,6,23,.2);
+  animation: appt-pop .15s ease-out;
+}
+@keyframes appt-pop { from { transform: translateY(8px); opacity:0 } to { transform: translateY(0); opacity:1 } }
+
+.appt-header {
+  padding: 14px 18px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid #e2e8f0;
+}
+.appt-header h3 { margin:0; font-size:18px; font-weight:700; color:#0f172a; }
+.icon-btn { background:transparent; border:none; font-size:20px; cursor:pointer; color:#0f172a; }
+
+.appt-body { padding: 16px 18px 6px 18px; }
+.sect-title { margin: 8px 0 10px; font-size:16px; font-weight:700; color:#0f172a; }
+
+.picker-grid { display:grid; grid-template-columns: 1fr 1fr; gap:18px; margin-bottom:8px; }
+.picker-col .pick-btn {
+  display:block; width:100%; padding:18px; border-radius:14px; border:none; cursor:pointer;
+  background:#3b82f6; color:#fff; font-weight:700; font-size:16px;
+}
+.card { display:flex; gap:14px; padding:16px; border:1px solid #e2e8f0; border-radius:14px; background:#fff; }
+.avatar { width:48px; height:48px; border-radius:999px; background:#94a3b8; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; }
+.thumb { width:64px; height:40px; border-radius:8px; background:#e2e8f0; }
+.card-info { flex:1; }
+.card-title { font-weight:700; color:#0f172a; }
+.card-sub { color:#64748b; font-size:12px; }
+.card-actions { margin-top:8px; display:flex; gap:8px; }
+.chip-appo { border:1px solid #e2e8f0; background:#fff; border-radius:999px; padding:4px 10px; font-size:12px; cursor:pointer; }
+
+.form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+.form-group-appo { display:flex; flex-direction:column; gap:6px; }
+.form-group-appo label { font-size:13px; color:#334155; }
+.form-group-appo input, .form-group-appo select, .form-group-appo textarea {
+  border:1px solid #cbd5e1; border-radius:10px; padding:10px 12px; font-size:14px; outline:none;
+}
+.form-group-appo input:focus, .form-group-appo select:focus, .form-group-appo textarea:focus {
+  border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.15);
+}
+.form-group-appo textarea { resize:vertical; }
+
+.appt-actions {
+  display:flex; justify-content:flex-end; gap:10px;
+  padding: 12px 18px 16px 18px; border-top:1px solid #e2e8f0;
+}
+.btn-primary { background:#4f46e5; color:#fff; border:none; border-radius:10px; height:40px; padding:0 14px; font-weight:600; }
+.btn-outline-appo { background:#fff; color:#0f172a; border:1px solid #cbd5e1; border-radius:10px; height:40px; padding:0 14px; font-weight:600; }
+.btn-danger-appo { background:#ef4444; color:#fff; border:none; border-radius:10px; height:40px; padding:0 14px; font-weight:600; }
+.hint { margin-right:auto; color:#64748b; font-size:12px; }
+
+/* Detail modal lines */
+.detail-line { margin-bottom:6px; color:#334155; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .picker-grid, .form-grid { grid-template-columns: 1fr; }
+  .appt-modal { width: 96vw; }
+}
+
+/* ===== Select (Customer/Vehicle) Modals ===== */
+.select-overlay{
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,.45);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 1300; backdrop-filter: blur(2px);
+}
+.select-modal{
+  width: 720px; max-width: calc(100vw - 40px);
+  background:#fff; border-radius:16px; overflow:hidden;
+  box-shadow: 0 12px 40px rgba(2,6,23,.22);
+  animation: appt-pop .15s ease-out;
+}
+.select-header{
+  padding: 14px 18px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid #e2e8f0;
+}
+.select-header h3{ margin:0; font-size:18px; font-weight:700; color:#0f172a; }
+
+.select-search{
+  display:flex; align-items:center; gap:10px;
+  padding: 12px 16px; border-bottom:1px solid #e2e8f0;
+}
+.select-search .icon{ width:18px; height:18px; color:#64748b; }
+.select-search input{
+  flex:1; border:1px solid #cbd5e1; border-radius:10px; padding:10px 12px; font-size:14px; outline:none;
+}
+.select-search input:focus{ border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.15); }
+
+.select-list{ max-height: 360px; overflow:auto; padding: 6px 6px; }
+.select-item{
+  display:flex; gap:12px; align-items:center;
+  padding: 10px 12px; border-radius:12px; cursor:pointer;
+}
+.select-item:hover{ background:#f1f5f9; }
+.select-item .avatar{
+  width:40px; height:40px; border-radius:999px; background:#94a3b8; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800;
+}
+.select-item .thumb{ width:60px; height:40px; border-radius:8px; background:#e2e8f0; }
+.item-info{ flex:1; min-width:0; }
+.item-title{ font-weight:700; color:#0f172a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.item-sub{ font-size:12px; color:#64748b; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.empty{ padding: 16px; text-align:center; color:#64748b; }
+
+.select-actions{
+  display:flex; justify-content:flex-end; gap:10px;
+  padding: 12px 18px 16px 18px; border-top:1px solid #e2e8f0;
+}
+
+/* Custom appointment type */
+.appointment-item.custom {
+  background: #f3e8ff;
+  color: #6a1b9a;
+}
+
+.appointment-block.custom {
+  background: #f3e8ff;
+  color: #6a1b9a;
+}
+
+.schedule-appointment.custom {
+  background: #f3e8ff;
+  border-left-color: #6a1b9a;
+}
+
+/* ==== Today highlight (Month / Week) ==== */
+
+/* เดือน: วงกลมเบา ๆ ที่เลขวันที่ และขอบ cell บาง ๆ */
+.calendar-day.today .day-number {
+  background: #4285f4;
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 6px;
+}
+.calendar-day.today {
+  box-shadow: inset 0 0 0 2px rgba(66,133,244,.2);
+}
+
+/* สัปดาห์: ไฮไลท์หัวคอลัมน์ของวันนี้ */
+.week-day-header.today {
+  background: #5a7ddf; /* เข้มขึ้นจาก header ปกติ */
+}
+
+/* สัปดาห์: เติมพื้นหลังคอลัมน์ของวันนี้ให้ต่างออกไปเล็กน้อย */
+.time-cell.today {
+  background: #f1f6ff;
+}
+
+/* ===== CSS: เพิ่มส่วนตารางประเภทเล็กน้อย (ใช้สไตล์เดิมเป็นหลัก) ===== */
+/* ตารางจัดการประเภท */
+/* ===== Type Manager Modal ===== */
+.type-overlay{
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,.45);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 1400; backdrop-filter: blur(2px);
+}
+.type-modal{
+  width: 920px; max-width: calc(100vw - 40px);
+  background:#fff; border-radius:16px; overflow:hidden;
+  box-shadow: 0 12px 40px rgba(2,6,23,.22);
+  animation: appt-pop .15s ease-out;
+}
+.type-header{
+  padding: 14px 18px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid #e2e8f0;
+}
+.type-header h3{ margin:0; font-size:18px; font-weight:700; color:#0f172a; display:flex; gap:8px; align-items:center; }
+
+.type-body{ padding: 12px 18px 6px 18px; }
+.type-grid-header{
+  display:grid; grid-template-columns: 2fr 2fr 1fr 1fr 1fr; gap:10px;
+  font-size:12px; color:#64748b; margin-bottom:6px;
+}
+.type-row{
+  display:grid; grid-template-columns: 2fr 2fr 1fr 1fr 1fr; gap:10px; align-items:center;
+  padding:8px 0; border-bottom:1px dashed #e2e8f0;
+}
+.type-row.new{ border-bottom:none; padding-top:12px; }
+.type-divider{ height:8px; }
+.type-row input[type="text"], .type-row input:not([type]){
+  border:1px solid #cbd5e1; border-radius:10px; padding:9px 10px; font-size:14px; outline:none;
+}
+.type-row input:focus{ border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.15); }
+.type-actions{ display:flex; gap:8px; justify-content:flex-end; }
+.color-input{ width: 100%; height: 40px; padding: 0; border: 1px solid #cbd5e1; border-radius: 10px; background: transparent; }
+
+.type-note{ font-size:12px; color:#64748b; margin-top:6px; }
+
+.type-footer{
+  display:flex; justify-content:flex-end; gap:10px;
+  padding: 12px 18px 16px 18px; border-top:1px solid #e2e8f0;
+}
+
+/* Ghost buttons (ลิงก์สไตล์เบา ๆ) */
+.btn-ghost{
+  background: transparent;
+  border: 1px dashed #cbd5e1;
+  color: #0f172a;
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 12px;
+  font-weight: 600;
+  display: inline-flex; align-items:center; gap:6px;
+  cursor: pointer;
+}
+.btn-ghost.header { margin-left: 8px; }
+.btn-ghost:hover{ background:#f8fafc; }
+
+/* เล็กลงสำหรับแถวในตัวจัดการ */
+.btn-primary.small, .btn-outline.small, .btn-danger.small {
+  height: 34px; padding: 0 10px; font-size: 13px;
+}
+
+/* ชิปประเภทใน Detail */
+.type-chip{
+  display:inline-flex; align-items:center;
+  padding: 2px 8px; border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1.6;
+}
+
+/* ปรับ select + ปุ่มแก้ไข ให้อยู่บรรทัดเดียวกัน */
+.type-inline {
+  display: flex; gap: 8px; align-items: center;
+}
+.type-inline select { flex: 1; }
+
+/* ลบสีคงที่เดิมของ maintenance/repair/service ให้ปล่อยให้ inline style คุม */
+.appointment-item, .appointment-block, .schedule-appointment {
+  border: 1px solid transparent;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+/* แสดงรายการประเภทแบบเลื่อนเมื่อเกิน ~4 แถว */
+.type-rows {
+  max-height: 260px;         /* ~4-5 แถว ขึ้นกับความสูงอุปกรณ์ */
+  overflow: auto;
+  padding-right: 2px;        /* กันสกอร์ลบาร์ทับเนื้อหาเล็กน้อย */
+}
+
+/* สกอร์ลบาร์อ่านง่าย */
+.type-rows::-webkit-scrollbar { width: 8px; }
+.type-rows::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+.type-rows::-webkit-scrollbar-track { background: transparent; }
+
+/* มือถือลดความสูงลงนิด */
+@media (max-width: 640px) {
+  .type-rows { max-height: 220px; }
+}
+

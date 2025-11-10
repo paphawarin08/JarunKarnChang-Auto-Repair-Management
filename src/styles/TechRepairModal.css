@@ -1,0 +1,60 @@
+/* overlay + modal */
+.trm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:1000}
+.trm-modal{width:100%;max-width:1080px;max-height:90vh;display:flex;flex-direction:column;background:#f7f8fb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+/* header */
+.trm-header{display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #eef2f7;padding:12px 14px}
+.trm-title{font-size:18px;font-weight:800}
+.trm-actions{display:flex;align-items:center;gap:10px}
+.trm-iconbtn{background:transparent;border:0;padding:6px;cursor:pointer}
+.trm-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #d8dee6;background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}
+.trm-btn:hover{background:#f2f6ff}
+.trm-btn-primary{background:#4a90e2;color:#fff;border-color:#4a90e2}
+.trm-btn-primary:hover{background:#3f7fc7}
+.trm-btn.ghost{background:#e5edff;color:#1e40af;border-color:#c7d2fe}
+/* body */
+.trm-content{overflow:auto;padding:12px 12px 16px}
+.trm-card{background:#fff;border:1px solid #e6e8ee;border-radius:12px;margin-top:12px;padding:12px}
+.trm-heading{font-size:16px;font-weight:800;margin:4px 0 10px}
+.trm-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.trm-block .trm-info{display:grid;gap:6px;color:#2f3640}
+.trm-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.trm-select,.trm-input{border:1px solid #dadde3;border-radius:10px;padding:10px 12px;outline:none;min-width:180px}
+.trm-input{flex:1 1 220px}
+.trm-list{background:#fff;border:1px solid #e9eaef;border-radius:10px}
+.trm-empty{padding:14px;color:#6b7280}
+.trm-listrow{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #f1f2f6}
+.trm-listrow:last-child{border-bottom:none}
+.trm-listleft{display:grid;gap:2px}
+.trm-line-name{font-weight:800}
+.trm-line-sub{font-size:12px;color:#6b7280}
+.trm-listright{display:flex;align-items:center;gap:8px}
+.trm-chip{display:inline-flex;align-items:center;gap:6px;border:none;border-radius:999px;padding:6px 10px;background:#e5e7eb;cursor:pointer}
+.trm-chip:hover{background:#d1d5db}
+.trm-chip.danger{background:#f3d2d8;color:#7a1f2b}
+.trm-row.addcharge{margin-top:10px}
+.trm-grow{flex:1}
+.trm-money{font-weight:900}
+.trm-sumgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.trm-sumcell{background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:10px}
+.trm-sumcell.total .trm-money{color:#0f766e}
+.trm-meta{display:flex;gap:16px;flex-wrap:wrap;color:#6b7280;margin:12px 4px}
+
+/* เมื่อ modal เปิด ป้องกัน scroll โครงหน้า (option เผื่อใช้) */
+.home-container.modal-open{overflow:hidden}
+/* ใช้สไตล์หลักจาก RepairPage.css เป็นหลัก */
+/* ที่นี่มีแค่จูนเล็กน้อยสำหรับ modal ของช่าง */
+
+.tech-modal { z-index: 1200; } /* ให้อยู่เหนือองค์ประกอบอื่นของหน้า TechHome */
+.tech-modal .modal-box { max-width: 820px; }
+
+/* ยกเลย์เอาท์หลักจาก RepairPage.css อยู่แล้ว ที่นี่แค่เพิ่ม option เสริมเล็กน้อย */
+.modal-overlay { z-index: 2000; } /* ให้ลอยเหนือ header อื่น ๆ */
+.modal-box.tech-modal { max-width: 900px; width: 100%; }
+.deposit-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.36); display:flex; align-items:center; justify-content:center; z-index: 2100; }
+.deposit-modal { background:#fff; width: 520px; max-width:calc(100% - 24px); border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,.2); overflow:hidden; }
+.deposit-header { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1px solid #eef2f7; }
+.deposit-body { padding:16px 18px; }
+.deposit-actions { display:flex; gap:10px; justify-content:flex-end; padding:12px 18px 18px; border-top:1px solid #f1f5f9; }
+.deposit-input { width:100%; padding:10px 12px; border-radius:10px; border:1px solid #e2e8f0; }
+.hint { color:#64748b; }
+

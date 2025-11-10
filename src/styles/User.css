@@ -1,0 +1,148 @@
+.uc-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.uc-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.uc-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uc-company-logo {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.uc-logo-img {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.uc-header-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.uc-search-container {
+  position: relative;
+}
+
+.uc-search-input {
+  padding: 0.5rem 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.uc-search-button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.uc-search-button:hover {
+  background-color: #2563eb;
+}
+
+.uc-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.uc-banner-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.uc-main {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.uc-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.uc-booking-methods {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.uc-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.uc-method p {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.uc-icon {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1/1;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .uc-header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .uc-search-input {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .uc-booking-methods {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .uc-icon {
+    max-width: 250px;
+  }
+
+  .uc-method p {
+    font-size: 1rem;
+  }
+}

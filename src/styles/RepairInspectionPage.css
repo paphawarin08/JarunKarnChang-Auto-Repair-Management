@@ -1,0 +1,12 @@
+.ins-wrap { padding: 16px; }
+.ins-header { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.ins-box { background:#fff; border-radius:12px; border:1px solid #e5e7eb; padding:16px; }
+.ins-btn { padding:10px 14px; border-radius:10px; cursor:pointer; }
+.ins-btn.primary { background:#3b82f6; color:#fff; border:none; }
+.ins-btn.outline { background:transparent; border:1px solid #94a3b8; color:#334155; }
+.ins-btn.danger { background:#ef4444; color:#fff; border:none; }
+.ins-uploader { border:1px dashed #fca5a5; background:#fee2e2; padding:18px; text-align:center; border-radius:12px; margin-top:8px; }
+.ins-grid { margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }
+.ins-card { border:1px solid #e5e7eb; border-radius:12px; padding:10px; background:#fff; }
+.ins-imgbox { position:relative; height:160px; border-radius:8px; overflow:hidden; background:#f1f5f9; }
+.ins-card .actions { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }

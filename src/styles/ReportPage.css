@@ -1,0 +1,179 @@
+/* Container */
+.rp-container {
+  min-height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.rp-header {
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.rp-back {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 10px;
+}
+.rp-back:hover,
+.rp-back:focus-visible {
+  background: rgba(0,0,0,0.05);
+  outline: none;
+}
+
+.rp-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.rp-header-spacer {
+  margin-left: auto;
+}
+
+/* Main */
+.rp-main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 24px 48px;
+}
+
+/* Grid */
+.rp-grid {
+  display: grid;
+  margin-top: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.rp-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 30px 20px;
+  min-height: 150px;
+  background: #4a90e2;        /* ใช้สีฟ้าตามที่กำหนด */
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.rp-card:hover,
+.rp-card:focus-visible {
+  background: #3f7fc7; /* เฉดเข้มขึ้นเล็กน้อยเวลา hover */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  outline: none;
+}
+
+
+.rp-card:active {
+  transform: translateY(0);
+}
+
+.rp-card-icon {
+  display: block;
+}
+
+.rp-card-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .rp-title {
+    font-size: 22px;
+  }
+  .rp-grid {
+    grid-template-columns: 1fr;
+  }
+  .rp-card {
+    padding: 28px 20px;
+  }
+  .rp-card-label {
+    font-size: 18px;
+  }
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.export-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.export-btn:hover {
+  background: #0056b3;
+}
+
+.cancel-btn {
+  margin-top: 15px;
+  background: #ccc;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #999;
+}

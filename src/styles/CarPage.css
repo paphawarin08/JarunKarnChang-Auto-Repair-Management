@@ -1,0 +1,572 @@
+/* CustomerManagement.css */
+
+.customer-management {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Header Styles */
+.header1 {
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.import-button {
+  background-color: #357abd;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.import-button:hover {
+  background-color: #357abd;
+}
+
+@media (min-width: 640px) {
+  .header-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-button {
+  color: #4b5563;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #111827;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .main-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.controls-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* View Toggle */
+.view-toggle {
+  display: flex;
+  background-color: #dbeafe;
+  border-radius: 20px;
+  padding: 0.25rem;
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.80rem 1.75rem;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.view-button.active {
+  background-color: #4a90e2;
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.view-button.inactive {
+  color: #2563eb;
+  background: transparent;
+}
+
+.view-button.inactive:hover {
+  background-color: #bfdbfe;
+}
+
+/* Sort Dropdown */
+.sort-container {
+  position: relative;
+}
+
+.sort-select {
+  appearance: none;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 1rem 2rem 1rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  border-color: #357abd;
+}
+
+.sort-dropdown-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* Search */
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 28rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.search-input {
+  display: block;
+  width: 89%;
+  padding: 13px 12px 13px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 17px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+.search-input:focus {
+  border-color: #357abd;
+}
+
+/* Table View */
+.table-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #6b7280;
+}
+
+.table-header th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-header th.sortable {
+  cursor: pointer;
+}
+
+.table-header th.sortable:hover {
+  background-color: #4b5563;
+}
+
+.table-body {
+  background-color: white;
+}
+
+.table-row {
+  border-top: 1px solid #e5e7eb;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.table-row:nth-child(odd) {
+  background-color: white;
+}
+
+.table-cell {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+.sort-indicator {
+  margin-left: 0.25rem;
+}
+
+/* List View */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.customer-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.card-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  background-color: #dbeafe;
+  border-radius: 50%;
+  padding: 0.75rem;
+  flex-shrink: 0;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.customer-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #357abd;
+  margin-bottom: 0.5rem;
+  margin-top: -0.25rem;
+}
+
+.customer-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+@media (min-width: 768px) {
+  .customer-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.line-indicator {
+  width: 1rem;
+  height: 1rem;
+  background-color: #10b981;
+  border-radius: 0.125rem;
+}
+
+.customer-note {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.more-button {
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  color: #4b5563;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  background-color: #ef4444;
+  font-size: 17px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #357abd;
+  font-size: 17px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Icon sizing */
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-md {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon-lg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/*------------------------------------------------------------รูปภาพรถ------------------------------------------------------------*/
+
+/* === Car image styles === */
+.car-thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.car-thumb.placeholder {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #f1f5f9; color: #94a3b8;
+}
+
+/* avatar ใน list view ถ้ามีรูป */
+.user-avatar-img {
+  width: 48px; height: 48px; object-fit: cover; border-radius: 999px;
+  display: block;
+}
+
+/* ภาพใน modal */
+.car-photo-lg-wrap { margin-bottom: 12px; }
+.car-photo-lg {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* พรีวิวเล็กในฟอร์มเพิ่ม/แก้ไข */
+.image-uploader {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.car-photo-sm {
+  width: 72px; height: 72px; object-fit: cover; border-radius: 10px;
+  border: 1px solid #e2e8f0; background: #f8fafc; display: inline-block;
+}
+.car-photo-sm.placeholder {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #94a3b8;
+}
+
+/* ลูกค้าที่เป็นเจ้าของรถ */
+.owner-lookup { position: relative; }
+.owner-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  font-size: 14px;
+}
+.owner-input:focus { border-color: #94a3b8; }
+.owner-dropdown {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  max-height: 260px;
+  overflow: auto;
+}
+.owner-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+}
+.owner-item:last-child { border-bottom: 0; }
+.owner-item:hover { background: #f8fafc; }
+.owner-name { font-weight: 600; color: #0f172a; }
+.owner-meta { font-size: 12px; color: #64748b; }
+
+.owner-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #eef2ff;
+  color: #1e3a8a;
+  border-radius: 999px;
+  font-size: 13px;
+}
+.owner-chip .chip-clear {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #1e3a8a;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ลิงก์ไปหน้า Customer ใน modal */
+.owner-line { display: grid; grid-template-columns: 100px 1fr auto; gap: 8px 12px; align-items: center; }
+.link-btn {
+  background: transparent;
+  border: 0;
+  color: #2563eb;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.link-btn:hover { text-decoration: underline; }
